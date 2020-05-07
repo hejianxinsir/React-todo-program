@@ -5,6 +5,7 @@ import TodoInput from './TodoInput.js';
 import TodoItem from './TodoItem.js';
 import 'normalize.css';
 import './css/reset.css';
+import UserDialog from './UserDialog.js';
 
 export default class App extends Component{
   constructor(){
@@ -41,6 +42,8 @@ export default class App extends Component{
         <ol className="todoList">
           {todos}
         </ol>
+
+        <UserDialog />
       </div>
     )
   }
@@ -75,7 +78,6 @@ export default class App extends Component{
 
   }
 }
-
 
 let id = 0;
 function idMaker(){
