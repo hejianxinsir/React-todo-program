@@ -17,13 +17,13 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://hejianxinsir.github.io/React-todo-program/",
   "eslintConfig": {
     "extends": "react-app"
   },
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
       "not op_mini all"
     ],
     "development": [
