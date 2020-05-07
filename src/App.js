@@ -40,7 +40,7 @@ export default class App extends Component{
             onSubmit={this.addTodo.bind(this)}
           />
         </div>
-        <ol>
+        <ol className="todoList">
           {todos}
         </ol>
       </div>

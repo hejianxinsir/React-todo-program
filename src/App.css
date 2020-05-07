@@ -9,3 +9,10 @@
   background: #fff;
   box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
 }
+
+.App > .todoList > li:nth-child(odd){
+  background: #eee;
+}
+.App > .todoList > li:nth-child(even){
+  background: transparent;
+}
