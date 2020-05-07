@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import './App.css';
+import './css/App.css';
 
 import TodoInput from './TodoInput.js';
 import TodoItem from './TodoItem.js';
 import 'normalize.css';
-import './reset.css';
+import './css/reset.css';
 
 export default class App extends Component{
   constructor(){
