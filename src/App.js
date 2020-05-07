@@ -5,17 +5,13 @@ import TodoInput from './TodoInput.js';
 import TodoItem from './TodoItem.js';
 import 'normalize.css';
 import './css/reset.css';
-import * as localStore from './localStorage.js';
-
-
-
 
 export default class App extends Component{
   constructor(){
     super()
     this.state = {
       newTodo: '',
-      todoList: localStore.load('todoList') || []
+      todoList: []
     }
   }
 
@@ -76,7 +72,7 @@ export default class App extends Component{
     this.setState(this.state)
   }
   componentDidUpdate(){
-    localStore.save('todoList', this.state.todoList)
+
   }
 }
 
