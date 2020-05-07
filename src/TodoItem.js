@@ -9,7 +9,9 @@ export default class TodoItem extends Component{
           onChange={this.toggle.bind(this)}
         />
         <span className="title">{this.props.todo.title}</span>
-        <button onClick={this.delete.bind(this)}>done</button>
+        <button onClick={this.delete.bind(this)}
+          className="deleteBtn"
+        >done</button>
       </div>
     )
   }

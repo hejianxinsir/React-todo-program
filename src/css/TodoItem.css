@@ -9,3 +9,12 @@
   flex-grow: 1;
   padding: 0 .5em;
 }
+
+.TodoItem > .deleteBtn{
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+.TodoItem > .deleteBtn:focus{
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
