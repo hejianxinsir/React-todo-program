@@ -33,6 +33,7 @@ export default class App extends Component{
           <TodoInput content={ this.state.newTodo }
             onChange={this.changeTitle.bind(this)}
             onSubmit={this.addTodo.bind(this)}
+            onDelete={this.delete.bind(this)}
           />
         </div>
         <ol>
@@ -62,6 +63,10 @@ export default class App extends Component{
   }
   toggle(e, todo){
     todo.status = todo.status === 'completed' ? '' : 'completed'
+    this.setState(this.state)
+  }
+  delete(e, todo){
+    todo.deleted = true
     this.setState(this.state)
   }
 }
