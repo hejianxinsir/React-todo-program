@@ -16,3 +16,7 @@
 .App > .todoList > li:nth-child(even){
   background: transparent;
 }
+
+.App > h1.myTodo{
+  text-align: center;
+}
