@@ -18,10 +18,15 @@ export default class App extends Component{
   }
 
   render(){
-    let todos = this.state.todoList.map((item, index)=>{
+    let todos = this.state.todoList
+      .filter((item)=> !item.deleted)
+      .map((item, index)=>{
       return (
         <li key={index}>
-          <TodoItem todo={item} onToggle={this.toggle.bind(this)}/>
+          <TodoItem todo={item}
+            onToggle={this.toggle.bind(this)}
+            onDelete={this.delete.bind(this)}
+          />
         </li>
       )
     })
@@ -33,7 +38,6 @@ export default class App extends Component{
           <TodoInput content={ this.state.newTodo }
             onChange={this.changeTitle.bind(this)}
             onSubmit={this.addTodo.bind(this)}
-            onDelete={this.delete.bind(this)}
           />
         </div>
         <ol>
