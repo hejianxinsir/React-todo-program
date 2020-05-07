@@ -4,6 +4,7 @@ import './App.css';
 import TodoInput from './TodoInput.js';
 import TodoItem from './TodoItem.js';
 import 'normalize.css';
+import './reset.css';
 
 export default class App extends Component{
   constructor(){
