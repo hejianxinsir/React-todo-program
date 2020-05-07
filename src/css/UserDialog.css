@@ -15,9 +15,7 @@
 .UserDialog > nav{
   text-align: center;
 }
-.UserDialog > nav > span{
-  margin: 0 .5em;
-}
+.UserDialog > nav > label{margin: 0 .5em; cursor: pointer;}
 
 .UserDialog > .panes{
   margin-top: 10px;
