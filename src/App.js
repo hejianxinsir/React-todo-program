@@ -11,6 +11,7 @@ export default class App extends Component{
   constructor(){
     super()
     this.state = {
+      user: {},
       newTodo: '',
       todoList: []
     }
@@ -32,7 +33,7 @@ export default class App extends Component{
 
     return (
       <div className="App">
-        <h1 className="myTodo">我的待办</h1>
+        <h1 className="myTodo">{this.state.user.username || '我'}的待办</h1>
         <div className="inputWrapper">
           <TodoInput content={ this.state.newTodo }
             onChange={this.changeTitle.bind(this)}
@@ -43,7 +44,7 @@ export default class App extends Component{
           {todos}
         </ol>
 
-        <UserDialog />
+        <UserDialog onSignUp={this.onSignUp.bind(this)}/>
       </div>
     )
   }
@@ -72,6 +73,10 @@ export default class App extends Component{
   }
   delete(e, todo){
     todo.deleted = true
+    this.setState(this.state)
+  }
+  onSignUp(user){
+    this.state.user = user
     this.setState(this.state)
   }
   componentDidUpdate(){
