@@ -50,8 +50,8 @@ export default class App extends Component{
 
     {this.state.user.id ? null :
       <UserDialog
-        onSignUp={this.onSignUp.bind(this)}
-        onSignIn={this.onSignIn.bind(this)}
+        onSignUp={this.onSignUpOrSignIn.bind(this)}
+        onSignIn={this.onSignUpOrSignIn.bind(this)}
       />
     }
       </div>
@@ -91,12 +91,7 @@ export default class App extends Component{
     todo.deleted = true
     this.setState(this.state)
   }
-  onSignUp(user){
-    let stateCopy = JSON.parse(JSON.stringify(this.state))
-    stateCopy.user = user
-    this.setState(stateCopy)
-  }
-  onSignIn(user){
+  onSignUpOrSignIn(user){
     let stateCopy = JSON.parse(JSON.stringify(this.state))
     stateCopy.user = user
     this.setState(stateCopy)
