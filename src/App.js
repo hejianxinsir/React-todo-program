@@ -6,7 +6,8 @@ import TodoItem from './TodoItem.js';
 import 'normalize.css';
 import './css/reset.css';
 import UserDialog from './UserDialog.js';
-import {getCurrentUser} from './leancloud';
+import {getCurrentUser, signOut} from './leancloud';
+
 
 export default class App extends Component{
   constructor(){
@@ -34,7 +35,9 @@ export default class App extends Component{
 
     return (
       <div className="App">
-        <h1 className="myTodo">{this.state.user.username || '我'}的待办</h1>
+        <h1 className="myTodo">{this.state.user.username || '我'}的待办
+          {this.state.user.id ? <button onClick={this.signOut.bind(this)}>退出</button> : null}
+        </h1>
         <div className="inputWrapper">
           <TodoInput content={ this.state.newTodo }
             onChange={this.changeTitle.bind(this)}
@@ -50,6 +53,13 @@ export default class App extends Component{
     )
   }
   
+  signOut(){
+    signOut()
+    let stateCopy = JSON.parse(JSON.stringify(this.state))
+    stateCopy.user = {}
+    this.setState(stateCopy)
+  }
+
   addTodo(event){
     this.state.todoList.push({
       id: idMaker(),

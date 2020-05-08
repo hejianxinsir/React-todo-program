@@ -8,6 +8,11 @@ AV.init({
 
 export default AV;
 
+export function signOut(){
+  AV.User.logOut()
+  return undefined
+}
+
 export function signUp(username, password, successFn, errorFn){
   // 新建 AVUser 对象实例
  var user = new AV.User()
