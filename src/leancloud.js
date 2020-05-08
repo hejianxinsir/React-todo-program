@@ -13,6 +13,15 @@ export function signOut(){
   return undefined
 }
 
+export function signIn(username, password, successFn, errorFn){
+  AV.User.logIn(username, password).then(function(loginedUser){
+    let user = getUserFromAVUser(loginedUser)
+    successFn.call(null, user)
+  }, function(error){
+    errorFn.call(null, error)
+  })
+}
+
 export function signUp(username, password, successFn, errorFn){
   // 新建 AVUser 对象实例
  var user = new AV.User()
