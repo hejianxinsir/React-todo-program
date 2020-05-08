@@ -50,8 +50,7 @@ export default class UserDialog extends Component{
           alert('用户名与密码不匹配')
           break
         default:
-          alert(error)
-          break
+          alert()
       }
     }
     signIn(username, password, success, error)
